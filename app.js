@@ -17,7 +17,7 @@ $(function () {
         const mejorPuntaje = localStorage.getItem("mejorPuntaje") || 0;
         if (puntos > mejorPuntaje) {
             localStorage.setItem("mejorPuntaje", puntos);
-            $("#mejorPuntaje").text("Mejor puntaje hasta ahora: <br>" + puntos);
+            $("#mejorPuntaje").text("Mejor puntaje hasta ahora: " + puntos);
         } else {
             $("#mejorPuntaje").text("Mejor puntaje hasta ahora: " + mejorPuntaje);
         }

@@ -12,6 +12,17 @@ $(function () {
         $("#puntos").text("PUNTUACIÓN: " + puntos);
     }
 
+    // Función para actualizar puntaje más alto
+    function actualizarMejorPuntaje() {
+        const mejorPuntaje = localStorage.getItem("mejorPuntaje") || 0;
+        if (puntos > mejorPuntaje) {
+            localStorage.setItem("mejorPuntaje", puntos);
+            $("#mejorPuntaje").text("Mejor puntaje hasta ahora: <br>" + puntos);
+        } else {
+            $("#mejorPuntaje").text("Mejor puntaje hasta ahora: " + mejorPuntaje);
+        }
+    }
+
     //Función para reproducir sonidos
     function reproducirSonido(isCorrect) {
         const audio = new Audio(isCorrect ? "./fx/correcto.mp3" : "./fx/incorrecto.mp3");
@@ -40,6 +51,7 @@ $(function () {
             setTimeout(() => $("button").prop("disabled", false), 500);
 
             numeroActual++;
+
             actualizarNumero();
         }
     }
@@ -61,6 +73,7 @@ $(function () {
         //Actualizar el puntaje
         if (isCorrect) {
             puntos++;
+            actualizarMejorPuntaje();
             $("#calculo").text("+1").removeClass("text-red-500").addClass("text-green-500");
         } else {
             puntos--;
@@ -89,6 +102,7 @@ $(function () {
         puntos = 0;
         actualizarNumero();
         actualizarPuntos();
+        actualizarMejorPuntaje();
         $("#resultados").text("");
         $("#calculo").text("");
 
@@ -107,6 +121,7 @@ $(function () {
     $("#reiniciar").click(reiniciarJuego);
 
     //Inicialización del juego
+    actualizarMejorPuntaje();
     actualizarNumero();
     actualizarPuntos();
 });

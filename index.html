@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es-NI">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FizzBuzz | nanypoe</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="/app.js"></script>
+  </head>
+
+  <body class="bg-gray-100 flex items-center justify-center h-screen gap-4">
+    <div class="bg-white p-8 rounded-lg shadow-lg text-center max-w-md w-full">
+      <h1 class="text-2xl font-bold mb-1">Bienvenidos al juego FizzBuzz</h1>
+      <div id="juego">
+        <h4 class="font-bold text-right mb-2" id="puntos"></h4>
+        <h4 class="font-bold text-right" id="calculo"></h4>
+        <div id="areaJuego" class="mb-4">
+          <span id="numeroActual" class="text-4xl font-bold text-gray-800"
+            >0</span
+          >
+        </div>
+        <div id="botones" class="grid grid-cols-2 gap-4">
+          <button
+            id="botonFizz"
+            class="bg-blue-500 text-white py-2 px-4 rounded-lg hover:bg-blue-600"
+          >
+            Fizz
+          </button>
+          <button
+            id="botonBuzz"
+            class="bg-green-500 text-white py-2 px-4 rounded-lg hover:bg-green-600"
+          >
+            Buzz
+          </button>
+          <button
+            id="botonFizzBuzz"
+            class="bg-purple-500 text-white py-2 px-4 rounded-lg hover:bg-purple-600"
+          >
+            FizzBuzz
+          </button>
+          <button
+            id="botonNope"
+            class="bg-gray-500 text-white py-2 px-4 rounded-lg hover:bg-gray-600"
+          >
+            Nope
+          </button>
+        </div>
+        <p id="resultados" class="mt-4 text-lg font-medium"></p>
+      </div>
+      <div id="pantallaGameOver" class="hidden">
+        <h1 class="text-4xl font-bold text-red-500">¡Has perdido!</h1>
+        <button
+          id="reiniciar"
+          class="mt-4 px-4 py-2 bg-blue-500 text-white rounded"
+        >
+          Reiniciar
+        </button>
+      </div>
+      <h4 class="font-bold mb-6">by nanypoe</h4>
+    </div>
+
+    <div class="bg-white p-8 rounded-lg shadow-lg text-center max-w-md w-full">
+      <h1 class="text-2xl font-bold mb-2">Instrucciones</h1>
+      <p class="text-gray-800 text-justify">
+        FizzBuzz es un juego simple de números, en el que irán apareciendo
+        distintos números en pantalla y tendrás que hacer lo siguiente: <br />
+        - Si el número es divisible por 3, presiona
+        <span class="font-bold">Fizz</span>.<br />
+        - Si el número es divisible por 5, presiona
+        <span class="font-bold">Buzz</span>.<br />
+        - Si el número es divisible ambos, presiona
+        <span class="font-bold">FizzBuzz</span>.<br />
+        - Si no es divisible por ninguno, presiona
+        <span class="font-bold">Nope</span>.
+      </p>
+    </div>
+  </body>
+</html>

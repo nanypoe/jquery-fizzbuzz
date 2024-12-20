@@ -14,7 +14,7 @@ $(function () {
 
     //Función para reproducir sonidos
     function reproducirSonido(isCorrect) {
-        const audio = new Audio(isCorrect ? "/fx/correcto.mp3" : "/fx/incorrecto.mp3");
+        const audio = new Audio(isCorrect ? "./fx/correcto.mp3" : "./fx/incorrecto.mp3");
         audio.play();
     }
 
@@ -39,9 +39,7 @@ $(function () {
             //Reactivarlos después de 500ms
             setTimeout(() => $("button").prop("disabled", false), 500);
 
-            numeroActual++; $("button").prop("disabled", true); // Desactiva todos los botones
-            setTimeout(() => $("button").prop("disabled", false), 500); // Los reactiva después de 500ms
-
+            numeroActual++;
             actualizarNumero();
         }
     }
